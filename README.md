@@ -22,18 +22,18 @@
 
 ## Making API Requests with Node
 
-- Get an info from a website's API thru request, then do something with it!
-  1. curl from the command line (not really useful)
-  2. request using node
-    - npm install request
-    - sample below:  
-    ```
-    var request = require('request');
-    request('http://api.weatherapi.com/v1/forecast.json?key=e023cea032e94529a91193233201408&q=22303&days=1', function(error, response, body) {
-      if(!error && response.statusCode == 200){
-        var parsedData = JSON.parse(body);
-        console.log(`The local forecast is: ${parsedData.current.condition.text} and sunset is ${parsedData.forecast.forecastday[0].astro.sunset}`);
-      }
-    });
+1. Get an info from a website's API thru request, then do something with it!
+  - curl from the command line (not really useful)
+  - request using node
+      - npm install request
+      - sample below:  
       ```
-   3. node first_request.js
+      var request = require('request');
+      request('http://api.weatherapi.com/v1/forecast.json?key=e023cea032e94529a91193233201408&q=22303&days=1', function(error, response, body) {
+        if(!error && response.statusCode == 200){
+          var parsedData = JSON.parse(body);
+          console.log(`The local forecast is: ${parsedData.current.condition.text} and sunset is ${parsedData.forecast.forecastday[0].astro.sunset}`);
+        }
+        });
+        ```
+ 2. node first_request.js
